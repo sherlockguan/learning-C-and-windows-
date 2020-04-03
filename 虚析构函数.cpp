@@ -1,5 +1,9 @@
 #include <iostream>
 using namespace std;
+/*析构函数就是当你类中属性申请了内存的时候，需要手动写
+
+一般你做了子类对象初始化父类指针都需要把父类中的析构函数改为虚析构函数哦
+*/
 class parent
 {
 public:
