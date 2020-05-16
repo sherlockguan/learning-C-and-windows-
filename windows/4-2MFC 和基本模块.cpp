@@ -107,6 +107,7 @@ public:
 		////结构体 POINT 获取鼠标当前位置
 		//CPoint pt;
 		//GetCursorPos(&pt);
+		//CString str;
 		//str.Format(L"the pos of my mouse if:%d %d", pt.x, pt.y);
 		//AfxMessageBox(str);
 		////offset 偏移 下300 右边200
