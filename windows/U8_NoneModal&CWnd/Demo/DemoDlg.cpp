@@ -13,7 +13,7 @@
 #endif
 
 
-// CDemoDlg ¶Ô»°¿ò
+// CDemoDlg
 
 
 
@@ -42,37 +42,30 @@ BOOL CDemoDlg::OnInitDialog()
 {
 	CDialogEx::OnInitDialog();
 
-	// ÉèÖÃ´Ë¶Ô»°¿òµÄÍ¼±ê¡£  µ±Ó¦ÓÃ³ÌÐòÖ÷´°¿Ú²»ÊÇ¶Ô»°¿òÊ±£¬¿ò¼Ü½«×Ô¶¯
-	//  Ö´ÐÐ´Ë²Ù×÷
-	SetIcon(m_hIcon, TRUE);			// ÉèÖÃ´óÍ¼±ê
-	SetIcon(m_hIcon, FALSE);		// ÉèÖÃÐ¡Í¼±ê
+	
+	SetIcon(m_hIcon, TRUE);			
+	SetIcon(m_hIcon, FALSE);		
 
-	//Win32µ±ÖÐÊµÏÖ·ÇÄ£Ì¬¶Ô»°¿ò CreateDialog
+	//Win32
 
-	return TRUE;  // ³ý·Ç½«½¹µãÉèÖÃµ½¿Ø¼þ£¬·ñÔò·µ»Ø TRUE
+	return TRUE;  
 }
-
-// Èç¹ûÏò¶Ô»°¿òÌí¼Ó×îÐ¡»¯°´Å¥£¬ÔòÐèÒªÏÂÃæµÄ´úÂë
-//  À´»æÖÆ¸ÃÍ¼±ê¡£  ¶ÔÓÚÊ¹ÓÃÎÄµµ/ÊÓÍ¼Ä£ÐÍµÄ MFC Ó¦ÓÃ³ÌÐò£¬
-//  Õâ½«ÓÉ¿ò¼Ü×Ô¶¯Íê³É¡£
 
 void CDemoDlg::OnPaint()
 {
 	if (IsIconic())
 	{
-		CPaintDC dc(this); // ÓÃÓÚ»æÖÆµÄÉè±¸ÉÏÏÂÎÄ
+		CPaintDC dc(this); 
 
 		SendMessage(WM_ICONERASEBKGND, reinterpret_cast<WPARAM>(dc.GetSafeHdc()), 0);
 
-		// Ê¹Í¼±êÔÚ¹¤×÷Çø¾ØÐÎÖÐ¾ÓÖÐ
+		
 		int cxIcon = GetSystemMetrics(SM_CXICON);
 		int cyIcon = GetSystemMetrics(SM_CYICON);
 		CRect rect;
 		GetClientRect(&rect);
 		int x = (rect.Width() - cxIcon + 1) / 2;
 		int y = (rect.Height() - cyIcon + 1) / 2;
-
-		// »æÖÆÍ¼±ê
 		dc.DrawIcon(x, y, m_hIcon);
 	}
 	else
@@ -81,8 +74,7 @@ void CDemoDlg::OnPaint()
 	}
 }
 
-//µ±ÓÃ»§ÍÏ¶¯×îÐ¡»¯´°¿ÚÊ±ÏµÍ³µ÷ÓÃ´Ëº¯ÊýÈ¡µÃ¹â±ê
-//ÏÔÊ¾¡£
+
 HCURSOR CDemoDlg::OnQueryDragIcon()
 {
 	return static_cast<HCURSOR>(m_hIcon);
@@ -92,15 +84,14 @@ HCURSOR CDemoDlg::OnQueryDragIcon()
 
 void CDemoDlg::OnBnClickedBtnChat()
 {
-	//CChatDlg dlg;//¾Ö²¿±äÁ¿
+	//CChatDlg dlg;
 
-	//µÚÒ»ÖÖ·½Ê½£ºnew
 	//CChatDlg *pDlg = new CChatDlg;
 
 	//pDlg->Create(IDD_CHAT_DLG, this);
 	//pDlg->ShowWindow(SW_SHOW);
 
-	//µÚ¶þÖÖ·½Ê½£º³ÉÔ±±äÁ¿ 第二种方式成员变量延长生命周期
+	// 第二种方式成员变量延长生命周期
 	if (m_chatDlg.m_hWnd == NULL)
 	{
 		m_chatDlg.Create(IDD_CHAT_DLG, this);
