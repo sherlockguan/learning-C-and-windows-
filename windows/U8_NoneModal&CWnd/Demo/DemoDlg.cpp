@@ -1,5 +1,5 @@
 ﻿
-// DemoDlg.cpp : ÊµÏÖÎÄ¼þ
+// DemoDlg.cpp :
 //注意头文件包含顺序
 
 #include "stdafx.h"
